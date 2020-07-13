@@ -25,7 +25,7 @@ setup(
     version="0.0.1",
     author="Example Author",
     author_email="author@example.com",
-    cmdclass={'build_ext': build_ext_cvxpy},
+    cmdclass={'build_ext': build_ext_robsel},
     description="A small example package",
     long_description=long_description,
     long_description_content_type="text/markdown",
