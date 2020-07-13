@@ -67,8 +67,6 @@ def RobustSelection(X, alpha, B=200, with_diag=False):
         R_vec[i] = RWP(X, A_n, with_diag)
     R_vec = np.sort(R_vec)
     index = (B)*(1-alpha) - 1
-    if type(index) == float:
-        return R_vec[int(index)]
-    else:
-        return R_vec[(index).astype(int)]
+    index = np.array(index)
+    return R_vec[(index).astype(int)]
 
