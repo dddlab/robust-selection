@@ -1,8 +1,8 @@
 from setuptools import setup, Extension, find_packages
 from setuptools.command.build_ext import build_ext
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+# with open("README.md", "r") as fh:
+#     long_description = fh.read()
 
 
 # inject numpy headers
@@ -27,8 +27,8 @@ setup(
     author_email="chautran@ucsb.edu",
     cmdclass={'build_ext': build_ext_robsel},
     description="Distributionally Robust Formulation and Model Selection for the Graphical Lasso",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
+    # long_description=long_description,
+    # long_description_content_type="text/markdown",
     url="https://github.com/dddlab/robust_selection",
     packages=['robsel'],
     package_dir={'robsel':'robsel'},
