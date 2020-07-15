@@ -33,7 +33,9 @@ setup(
     packages=['robsel'],
     package_dir={'robsel':'robsel'},
     python_requires='>=3.6',
-    install_requires=["numpy >= 1.15"],
-    setup_requires=["numpy >= 1.15"],
+    install_requires=["numpy >= 1.15",
+                      "scikit-learn >= 0.22.1"],
+    setup_requires=["numpy >= 1.15",
+                    "scikit-learn >= 0.22.1"],
 )
 
