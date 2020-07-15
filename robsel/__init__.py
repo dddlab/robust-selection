@@ -1,2 +1,2 @@
 from . import robsel
-from robsel import *
+from .robsel import *

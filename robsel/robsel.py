@@ -1,8 +1,5 @@
 import numpy as np
-from scipy import linalg
-import sklearn
 from sklearn.utils import resample
-import os
 
 def RWP(X, orig_cov, with_diag=False):
     """
