@@ -11,7 +11,7 @@ Accompanying paper: https://arxiv.org/abs/1905.08975
 The code contained in this repository was tested on the following configuration of Python:
 
 - python=3.7.4
-- robust-selection=0.0.6
+- robust-selection=0.0.7
 - numpy=1.17.4
 - scipy=1.3.1
 - scikit-learn=0.22.1

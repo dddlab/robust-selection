@@ -22,14 +22,14 @@ class build_ext_robsel(build_ext):
 
 setup(
     name="robust-selection",
-    version="0.0.6",
+    version="0.0.7",
     author="Chau Tran",
     author_email="chautran@ucsb.edu",
     cmdclass={'build_ext': build_ext_robsel},
     description="Distributionally Robust Formulation and Model Selection for the Graphical Lasso",
     # long_description=long_description,
     # long_description_content_type="text/markdown",
-    url="https://github.com/dddlab/robust_selection",
+    url="https://github.com/dddlab/robust-selection",
     packages=['robsel'],
     package_dir={'robsel':'robsel'},
     python_requires='>=3.6',
