@@ -4,7 +4,9 @@ Robust Selection
 This repository provides a Python package for Robust Selection algorithm 
 for estimation of the graphical lasso regularization parameter.
 
-Accompanying paper: https://arxiv.org/abs/1905.08975
+Accompanying paper: Cisneros-Velarde, P., Petersen, A. & Oh, S.. (2020). Distributionally Robust Formulation and Model Selection for the Graphical Lasso. Proceedings of the Twenty Third International Conference on Artificial Intelligence and Statistics, in PMLR 108:756-765
+http://proceedings.mlr.press/v108/cisneros20a.html
+
 
 ## Software dependencies
 
