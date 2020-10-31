@@ -22,7 +22,7 @@ class build_ext_robsel(build_ext):
 
 setup(
     name="robust-selection",
-    version="0.0.7",
+    version="0.0.8",
     author="Chau Tran",
     author_email="chautran@ucsb.edu",
     cmdclass={'build_ext': build_ext_robsel},
