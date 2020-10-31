@@ -1,7 +1,7 @@
 Robust Selection
 ================
 
-[![PyPI version](https://badge.fury.io/py/robust-selection.svg)](https://badge.fury.io/py/robust-selection) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dddlab/robust-selection/master?filepath=examples%2Frobsel_cv_example.ipynb)
+[![PyPI version](https://badge.fury.io/py/robust-selection.svg)](https://badge.fury.io/py/robust-selection) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dddlab/robust-selection/main?filepath=examples%2Frobsel_cv_example.ipynb)
 
 Python Package by **C Tran**, P Cisneros-Velarde, A Petersen and S-Y Oh
 
