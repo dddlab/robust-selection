@@ -10,6 +10,8 @@ for estimation of the graphical lasso regularization parameter.
 
 P Cisneros-Velarde, A Petersen and S-Y Oh (2020). Distributionally Robust Formulation and Model Selection for the Graphical Lasso. Proceedings of the Twenty Third International Conference on Artificial Intelligence and Statistics. [[PMLR](http://proceedings.mlr.press/v108/cisneros20a.html)][[Papers with Code](https://paperswithcode.com/paper/distributionally-robust-formulation-and-model)]
 
+![CV vs. RobSel](https://github.com/dddlab/robust-selection/raw/pypi/examples/cv-vs-robsel.png)
+
 ## Dependencies
 
 The code contained in this repository was tested on the following configuration of Python:
