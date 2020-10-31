@@ -1,14 +1,18 @@
 Robust Selection
-==============
+================
+
+[![PyPI version](https://badge.fury.io/py/robust-selection.svg)](https://badge.fury.io/py/robust-selection) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dddlab/robust-selection/master?filepath=examples%2Frobsel_cv_example.ipynb)
+
+Python Package by **C Tran**, P Cisneros-Velarde, A Petersen and S-Y Oh
 
 This repository provides a Python package for Robust Selection algorithm 
 for estimation of the graphical lasso regularization parameter.
 
-Accompanying paper: Cisneros-Velarde, P., Petersen, A. & Oh, S.. (2020). Distributionally Robust Formulation and Model Selection for the Graphical Lasso. Proceedings of the Twenty Third International Conference on Artificial Intelligence and Statistics.
-http://proceedings.mlr.press/v108/cisneros20a.html
+P Cisneros-Velarde, A Petersen and S-Y Oh (2020). Distributionally Robust Formulation and Model Selection for the Graphical Lasso. Proceedings of the Twenty Third International Conference on Artificial Intelligence and Statistics. [[PMLR](http://proceedings.mlr.press/v108/cisneros20a.html)][[Papers with Code](https://paperswithcode.com/paper/distributionally-robust-formulation-and-model)]
 
+![CV vs. RobSel](https://github.com/dddlab/robust-selection/raw/pypi/examples/cv-vs-robsel.png)
 
-## Software dependencies
+## Dependencies
 
 The code contained in this repository was tested on the following configuration of Python:
 
@@ -20,12 +24,8 @@ The code contained in this repository was tested on the following configuration 
 - networkx=2.4
 - pandas=0.25.3
 
-## Installation guide
+## Installation
 
 ```bash
 pip install robust-selection
 ```
-
-## Examples
-
- - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dddlab/robust-selection/master?filepath=examples%2Frobsel_cv_example.ipynb) Launch demo notebook on Binder
