@@ -13,13 +13,13 @@ P Cisneros-Velarde, A Petersen and S-Y Oh (2020). Distributionally Robust Formul
 To install this package with devtools, run the following command in your R console:
 
 ```r
-devtools::install_github("robsel")
+devtools::install_github("dddlab/robust-selection/R-package")
 ```
 
 If you also want install the vignettes along with the package, type instead:
 
 ```r
-devtools::install_github("robsel", build_vignette = TRUE)
+devtools::install_github("dddlab/robust-selection/R-package", build_vignette = TRUE)
 ```
 
 Note that building the vignettes may require additional R packages.
