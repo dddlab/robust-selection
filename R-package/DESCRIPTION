@@ -10,7 +10,7 @@ BugReports: https://github.com/cbtran/robsel/issues
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
-Imports: glasso, stats, MASS
+Imports: glasso, stats, boot
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1

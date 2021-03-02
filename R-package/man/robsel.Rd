@@ -4,7 +4,7 @@
 \alias{robsel}
 \title{Robust Selection}
 \usage{
-robsel(X, alpha, B = 200)
+robsel(X, alpha = 0.05, B = 200)
 }
 \arguments{
 \item{X}{A \code{n}-by-\code{p} data matrix}
@@ -22,16 +22,10 @@ Robust Selection algorithm for estimation of the regularization parameter for Gr
 \examples{
 set.seed(17)
 library(robsel)
-library(MASS)
-n <- 1000
-p <- 50
-mu <- rep(0, p)
-Sigma <- rWishart(1,p,diag(p))
-X <- mvrnorm(n, mu, Sigma)
-alpha = 0.05
+X <-matrix(rnorm(50*20),ncol=20)
 
 #Compute estimation of lambda at confidence level alpha
-lambda <- robsel(X = X, alpha = alpha, B = 200)
+lambda <- robsel(X = X, alpha = 0.05, B = 200)
 
 }
 \references{

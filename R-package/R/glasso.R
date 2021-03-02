@@ -5,22 +5,17 @@
 #' @param X A \code{n}-by-\code{p} data matrix
 #' @param alpha A prespecified confidence level. Default 0.05
 #' @param B Number of bootstrap sample. Default 200
+#' @param ... Optional arguments passed on to glasso.
 #'
 #' @return Output of glasso using estimate regularization parameter lambda from robsel
 #'
 #' @examples
 #' set.seed(17)
 #' library(robsel)
-#' library(MASS)
-#' n <- 1000
-#' p <- 50
-#' mu <- rep(0, p)
-#' Sigma <- rWishart(1,p,diag(p))
-#' X <- mvrnorm(n, mu, Sigma)
-#' alpha = 0.05
+#' X <-matrix(rnorm(50*20),ncol=20)
 #'
 #' #Use Graphical Lasso with estimate regularization parameter lambda from RobSel
-#' a <- robsel.glasso(X = X, alpha = alpha, B = 200)
+#' a <- robsel.glasso(X = X, alpha = 0.05, B = 200)
 #'
 #' @references P Cisneros-Velarde, A Petersen and S-Y Oh (2020). Distributionally Robust Formulation and Model Selection for the Graphical Lasso. Proceedings of the Twenty Third International Conference on Artificial Intelligence and Statistics.
 #' @references Friedman, Jerome, Trevor Hastie, and Robert Tibshirani. 'Sparse inverse covariance estimation with the graphical lasso.' \emph{Biostatistics} 9.3 (2008): 432-441.
@@ -30,12 +25,14 @@
 #'
 #' @seealso \link[robsel]{robsel}
 #'
-#' @import glasso
+#' @importFrom glasso glasso
 #' @importFrom stats cov
 #' @export
 #'
-robsel.glasso <- function(X, alpha, B = 200) {
+robsel.glasso <- function(X, alpha = 0.05, B = 200, ...) {
+    # Compute estimate regularization parameter from RobSel
     rho <- robsel(X, alpha, B)
     s <- cov(X)
-    return(glasso(s, rho))
+    # Return the fit of glasso
+    return(glasso(s, rho, ...))
 }

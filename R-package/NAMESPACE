@@ -2,5 +2,6 @@
 
 export(robsel)
 export(robsel.glasso)
-import(glasso)
+importFrom(boot,boot)
+importFrom(glasso,glasso)
 importFrom(stats,cov)

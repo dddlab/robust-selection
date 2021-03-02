@@ -4,7 +4,7 @@
 \alias{robsel.glasso}
 \title{Fit Graphical Lasso with RobSel}
 \usage{
-robsel.glasso(X, alpha, B = 200)
+robsel.glasso(X, alpha = 0.05, B = 200, ...)
 }
 \arguments{
 \item{X}{A \code{n}-by-\code{p} data matrix}
@@ -12,6 +12,8 @@ robsel.glasso(X, alpha, B = 200)
 \item{alpha}{A prespecified confidence level. Default 0.05}
 
 \item{B}{Number of bootstrap sample. Default 200}
+
+\item{...}{Optional arguments passed on to glasso.}
 }
 \value{
 Output of glasso using estimate regularization parameter lambda from robsel
@@ -22,16 +24,10 @@ Fit  Graphical Lasso with estimate regularization parameter from Robust Selectio
 \examples{
 set.seed(17)
 library(robsel)
-library(MASS)
-n <- 1000
-p <- 50
-mu <- rep(0, p)
-Sigma <- rWishart(1,p,diag(p))
-X <- mvrnorm(n, mu, Sigma)
-alpha = 0.05
+X <-matrix(rnorm(50*20),ncol=20)
 
 #Use Graphical Lasso with estimate regularization parameter lambda from RobSel
-a <- robsel.glasso(X = X, alpha = alpha, B = 200)
+a <- robsel.glasso(X = X, alpha = 0.05, B = 200)
 
 }
 \references{

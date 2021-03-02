@@ -56,3 +56,4 @@ env_*
 venv/
 pip-wheel-metadata/
 tags
+.Rproj.user
