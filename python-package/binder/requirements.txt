@@ -1,6 +1,0 @@
-scikit-learn
-robust-selection
-networkx
-matplotlib
-seaborn
-pandas

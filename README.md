@@ -12,20 +12,20 @@ P Cisneros-Velarde, A Petersen and S-Y Oh (2020). Distributionally Robust Formul
 
 ![CV vs. RobSel](https://github.com/dddlab/robust-selection/raw/main/examples/cv-vs-robsel.png)
 
+## Dependencies
+
+The code contained in this repository was tested on the following configuration of Python:
+
+- python=3.7.4
+- robust-selection=0.0.7
+- numpy=1.17.4
+- scipy=1.3.1
+- scikit-learn=0.22.1
+- networkx=2.4
+- pandas=0.25.3
+
 ## Installation
-To install R package with devtools, run the following command in your R console:
-```r
-devtools::install_github("dddlab/robust-selection/R-package")
-```
 
-If you also want install the vignettes along with the package, type instead:
-
-```r
-devtools::install_github("dddlab/robust-selection/R-package", build_vignette = TRUE)
-```
-
-To install python package from pypi:
 ```bash
 pip install robust-selection
 ```
-
