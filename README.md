@@ -16,7 +16,7 @@ P Cisneros-Velarde, A Petersen and S-Y Oh (2020). Distributionally Robust Formul
 ### R
  To install R package with devtools, run the following command in your R console:
  ```r
- devtools::install_github("dddlab/robust-selection/)
+ devtools::install_github("dddlab/robust-selection/")
  ```
 
  If you also want install the vignettes along with the package, type instead:
