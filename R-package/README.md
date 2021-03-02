@@ -21,5 +21,3 @@ If you also want install the vignettes along with the package, type instead:
 ```r
 devtools::install_github("dddlab/robust-selection/R-package", build_vignette = TRUE)
 ```
-
-Note that building the vignettes may require additional R packages.
