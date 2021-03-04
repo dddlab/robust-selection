@@ -16,7 +16,11 @@ robsel.glasso(X, alpha = 0.05, B = 200, ...)
 \item{...}{Optional arguments passed on to glasso.}
 }
 \value{
-Output of glasso using estimate regularization parameter lambda from robsel
+A list with components:
+\item{alpha}{Prespecified confidence level}
+\item{lambda}{Estimate regularization parameter for Graphical Lasso}
+\item{Omega}{Estimated inverse covariance matrix}
+\item{Sigma}{Estimated covariance matrix}
 }
 \description{
 Fit  Graphical Lasso with estimate regularization parameter from Robust Selection
@@ -40,5 +44,5 @@ Meinshausen, Nicolai and Buhlmann, Peter. 2006. 'High-Dimensional Graphs and Var
 Witten, Daniela M, Friedman, Jerome H, and Simon, Noah. 2011. 'New Insights and Faster computations for the Graphical Lasso.' \emph{Journal of Computation and Graphical Statistics}. Taylor and Francis: 892-900.
 }
 \seealso{
-\link[robsel]{robsel}
+\link[robsel]{robsel} for Robust Selection algorithm, \link[glasso]{glasso} for Graphical Lasso algorithm.
 }

@@ -7,7 +7,11 @@
 #' @param B Number of bootstrap sample. Default 200
 #' @param ... Optional arguments passed on to glasso.
 #'
-#' @return Output of glasso using estimate regularization parameter lambda from robsel
+#' @return A list with components:
+#' \item{alpha}{Prespecified confidence level}
+#' \item{lambda}{Estimate regularization parameter for Graphical Lasso}
+#' \item{Omega}{Estimated inverse covariance matrix}
+#' \item{Sigma}{Estimated covariance matrix}
 #'
 #' @examples
 #' set.seed(17)
@@ -23,7 +27,7 @@
 #' @references Witten, Daniela M, Friedman, Jerome H, and Simon, Noah. 2011. 'New Insights and Faster computations for the Graphical Lasso.' \emph{Journal of Computation and Graphical Statistics}. Taylor and Francis: 892-900.
 #'
 #'
-#' @seealso \link[robsel]{robsel}
+#' @seealso \link[robsel]{robsel} for Robust Selection algorithm, \link[glasso]{glasso} for Graphical Lasso algorithm.
 #'
 #' @importFrom glasso glasso
 #' @importFrom stats cov
@@ -31,8 +35,11 @@
 #'
 robsel.glasso <- function(X, alpha = 0.05, B = 200, ...) {
     # Compute estimate regularization parameter from RobSel
-    rho <- robsel(X, alpha, B)
+    lambda <- robsel(X, alpha, B)
     s <- cov(X)
     # Return the fit of glasso
-    return(glasso(s, rho, ...))
+    model <- glasso(s=s, rho=lambda, ...)
+    returns = list(alpha = alpha, lambda = lambda,
+                   Omega = model$wi, Sigma = model$w)
+    return(returns)
 }
