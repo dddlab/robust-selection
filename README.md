@@ -3,7 +3,7 @@ Robust Selection
 
 [![PyPI version](https://badge.fury.io/py/robust-selection.svg)](https://badge.fury.io/py/robust-selection) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dddlab/robust-selection/main?filepath=examples%2Frobsel_cv_example.ipynb)
 
-Python Package by **C Tran**, P Cisneros-Velarde, A Petersen and S-Y Oh
+R and Python Package by **C Tran**, P Cisneros-Velarde, A Petersen and S-Y Oh
 
 This repository provides a Python package for Robust Selection algorithm 
 for estimation of the graphical lasso regularization parameter.
@@ -12,20 +12,19 @@ P Cisneros-Velarde, A Petersen and S-Y Oh (2020). Distributionally Robust Formul
 
 ![CV vs. RobSel](https://github.com/dddlab/robust-selection/raw/main/examples/cv-vs-robsel.png)
 
-## Dependencies
-
-The code contained in this repository was tested on the following configuration of Python:
-
-- python=3.7.4
-- robust-selection=0.0.7
-- numpy=1.17.4
-- scipy=1.3.1
-- scikit-learn=0.22.1
-- networkx=2.4
-- pandas=0.25.3
-
 ## Installation
+### R
+ To install R package with devtools, run the following command in your R console:
+ ```r
+ devtools::install_github("dddlab/robust-selection/")
+ ```
 
+ If you also want install the vignettes along with the package, type instead:
+ ```r
+ devtools::install_github("dddlab/robust-selection/", build_vignette = TRUE)
+ ```
+### Python
+ To install python package from pypi:
 ```bash
 pip install robust-selection
 ```
