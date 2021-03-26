@@ -1,12 +1,9 @@
-robsel.rwp <- function(X, indices) {
-    #Sample size
-    n <- nrow(X)
+robsel.rwp <- function(orig.cov, X, indices) {
 
     #Get bootstrap sample with replacement
     X.bootstrap <- X[indices, ]
 
     #Compute the bootstrap RWP function
-    orig.cov <- c(cov(X))
     boot.cov <- c(cov(X.bootstrap))
     return(max(abs(orig.cov - boot.cov)))
 }
@@ -37,6 +34,7 @@ robsel.rwp <- function(X, indices) {
 
 robsel <- function(X, alpha = 0.05, B = 200) {
     #For each bootstrap sample, compute the bootstrap RWP function
+    orig.cov <- cov(X)
     lambda <- boot(data=X, statistic=robsel.rwp, R=B)$t
 
     #Sort lambda from smallest to largest
