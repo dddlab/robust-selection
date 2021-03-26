@@ -35,7 +35,7 @@ robsel.rwp <- function(orig.cov, X, indices) {
 robsel <- function(X, alpha = 0.05, B = 200) {
     #For each bootstrap sample, compute the bootstrap RWP function
     orig.cov <- cov(X)
-    lambda <- boot(data=X, statistic=robsel.rwp, R=B)$t
+    lambda <- boot(data=X, statistic=robsel.rwp, R=B, orig.cov=orig.cov)$t
 
     #Sort lambda from smallest to largest
     lambda <- sort(lambda)
