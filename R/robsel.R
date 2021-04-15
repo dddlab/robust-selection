@@ -5,7 +5,8 @@ robsel.rwp <- function(orig.cov, X, indices) {
 
     #Compute the bootstrap RWP function
     boot.cov <- c(cov(X.bootstrap))
-    return(max(abs(orig.cov - boot.cov)))
+    idx <- lower.tri(boot.cov, diag = T)
+    return(max(abs(orig.cov - boot.cov)[idx]))
 }
 
 #' @title Robust Selection
