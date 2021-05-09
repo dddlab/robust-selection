@@ -3,7 +3,7 @@
 #' @description Robust Selection algorithm for estimation of the regularization parameter for Graphical Lasso
 #'
 #' @param X A \code{n}-by-\code{p} data matrix
-#' @param alpha A prespecified confidence level. Default 0.05
+#' @param alpha A prespecified confidence level. Default 0.9
 #' @param B Number of bootstrap sample. Default 200
 #'
 #' @return \code{lambda} A estimation of the regularization parameter for Graphical Lasso
@@ -14,7 +14,7 @@
 #' X <-matrix(rnorm(50*20),ncol=20)
 #'
 #' #Compute estimation of lambda at confidence level alpha
-#' lambda <- robsel(X = X, alpha = 0.05, B = 200)
+#' lambda <- robsel(X = X, alpha = 0.9, B = 200)
 #'
 #' @references P Cisneros-Velarde, A Petersen and S-Y Oh (2020). Distributionally Robust Formulation and Model Selection for the Graphical Lasso. Proceedings of the Twenty Third International Conference on Artificial Intelligence and Statistics.
 #'

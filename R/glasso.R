@@ -3,7 +3,7 @@
 #' @description Fit  Graphical Lasso with estimate regularization parameter from Robust Selection
 #'
 #' @param X A \code{n}-by-\code{p} data matrix
-#' @param alpha A prespecified confidence level. Default 0.05
+#' @param alpha A prespecified confidence level. Default 0.9
 #' @param B Number of bootstrap sample. Default 200
 #' @param ... Optional arguments passed on to glasso.
 #'
@@ -19,7 +19,7 @@
 #' X <-matrix(rnorm(50*20),ncol=20)
 #'
 #' #Use Graphical Lasso with estimate regularization parameter lambda from RobSel
-#' a <- robsel.glasso(X = X, alpha = 0.05, B = 200)
+#' a <- robsel.glasso(X = X, alpha = 0.9, B = 200)
 #'
 #' @references P Cisneros-Velarde, A Petersen and S-Y Oh (2020). Distributionally Robust Formulation and Model Selection for the Graphical Lasso. Proceedings of the Twenty Third International Conference on Artificial Intelligence and Statistics.
 #' @references Friedman, Jerome, Trevor Hastie, and Robert Tibshirani. 'Sparse inverse covariance estimation with the graphical lasso.' \emph{Biostatistics} 9.3 (2008): 432-441.

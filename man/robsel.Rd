@@ -9,7 +9,7 @@ robsel(X, alpha = 0.9, B = 200)
 \arguments{
 \item{X}{A \code{n}-by-\code{p} data matrix}
 
-\item{alpha}{A prespecified confidence level. Default 0.05}
+\item{alpha}{A prespecified confidence level. Default 0.9}
 
 \item{B}{Number of bootstrap sample. Default 200}
 }
@@ -25,7 +25,7 @@ library(robsel)
 X <-matrix(rnorm(50*20),ncol=20)
 
 #Compute estimation of lambda at confidence level alpha
-lambda <- robsel(X = X, alpha = 0.05, B = 200)
+lambda <- robsel(X = X, alpha = 0.9, B = 200)
 
 }
 \references{

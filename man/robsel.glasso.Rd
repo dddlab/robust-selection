@@ -9,7 +9,7 @@ robsel.glasso(X, alpha = 0.9, B = 200, ...)
 \arguments{
 \item{X}{A \code{n}-by-\code{p} data matrix}
 
-\item{alpha}{A prespecified confidence level. Default 0.05}
+\item{alpha}{A prespecified confidence level. Default 0.9}
 
 \item{B}{Number of bootstrap sample. Default 200}
 
@@ -31,7 +31,7 @@ library(robsel)
 X <-matrix(rnorm(50*20),ncol=20)
 
 #Use Graphical Lasso with estimate regularization parameter lambda from RobSel
-a <- robsel.glasso(X = X, alpha = 0.05, B = 200)
+a <- robsel.glasso(X = X, alpha = 0.9, B = 200)
 
 }
 \references{
