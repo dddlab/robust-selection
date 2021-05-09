@@ -2,6 +2,7 @@
 
 export(robsel)
 export(robsel.glasso)
-importFrom(boot,boot)
+importFrom(Rcpp,sourceCpp)
 importFrom(glasso,glasso)
 importFrom(stats,cov)
+useDynLib(robsel)

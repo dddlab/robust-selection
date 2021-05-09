@@ -4,7 +4,7 @@
 \alias{robsel.glasso}
 \title{Fit Graphical Lasso with RobSel}
 \usage{
-robsel.glasso(X, alpha = 0.05, B = 200, ...)
+robsel.glasso(X, alpha = 0.9, B = 200, ...)
 }
 \arguments{
 \item{X}{A \code{n}-by-\code{p} data matrix}

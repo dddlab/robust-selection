@@ -28,12 +28,13 @@
 #'
 #'
 #' @seealso \link[robsel]{robsel} for Robust Selection algorithm, \link[glasso]{glasso} for Graphical Lasso algorithm.
-#'
+#' @useDynLib robsel
+#' @importFrom Rcpp sourceCpp
 #' @importFrom glasso glasso
 #' @importFrom stats cov
 #' @export
 #'
-robsel.glasso <- function(X, alpha = 0.05, B = 200, ...) {
+robsel.glasso <- function(X, alpha = 0.9, B = 200, ...) {
     # Compute estimate regularization parameter from RobSel
     lambda <- robsel(X, alpha, B)
     s <- cov(X)

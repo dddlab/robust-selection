@@ -1,14 +1,3 @@
-robsel.rwp <- function(orig.cov, X, indices) {
-
-    #Get bootstrap sample with replacement
-    X.bootstrap <- X[indices, ]
-
-    #Compute the bootstrap RWP function
-    boot.cov <- c(cov(X.bootstrap))
-    idx <- lower.tri(boot.cov, diag = T)
-    return(max(abs(orig.cov - boot.cov)[idx]))
-}
-
 #' @title Robust Selection
 #'
 #' @description Robust Selection algorithm for estimation of the regularization parameter for Graphical Lasso
@@ -30,18 +19,28 @@ robsel.rwp <- function(orig.cov, X, indices) {
 #' @references P Cisneros-Velarde, A Petersen and S-Y Oh (2020). Distributionally Robust Formulation and Model Selection for the Graphical Lasso. Proceedings of the Twenty Third International Conference on Artificial Intelligence and Statistics.
 #'
 #' @seealso \code{\link{robsel.glasso}} for using Graphical Lasso algorithm with estimate regularization parameter lambda from Robust Selection.
-#' @importFrom boot boot
+#' @useDynLib robsel
+#' @importFrom Rcpp sourceCpp
 #' @export
 
-robsel <- function(X, alpha = 0.05, B = 200) {
+robsel <- function(X, alpha = 0.9, B = 200) {
+    if (alpha<0 || alpha >1) {
+        stop('alpha must be between 0 and 1')
+    }
+    if (B < 100) {
+        warning("Please choose a large B (B >= 100 is recommened)")
+    }
     #For each bootstrap sample, compute the bootstrap RWP function
-    orig.cov <- cov(X)
-    lambda <- boot(data=X, statistic=robsel.rwp, R=B, orig.cov=orig.cov)$t
+    lambda <- rwp_rcpp(X, B)
 
     #Sort lambda from smallest to largest
     lambda <- sort(lambda)
 
     #Choose lambda by order statistic
     index <- as.integer(B * (1 - alpha))
-    return(lambda[index])
+    if (index == 0) {
+        return(lambda[1])
+    } else {
+        return(lambda[index])
+    }
 }
