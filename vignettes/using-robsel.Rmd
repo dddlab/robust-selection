@@ -3,7 +3,7 @@ title: "Using the robsel package"
 #output: rmarkdown::html_vignette
 output: pdf_document
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Using RobSel}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
