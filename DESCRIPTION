@@ -2,16 +2,18 @@ Package: robsel
 Type: Package
 Title: Robust Selection algorithm for Graphical Lasso
 Version: 0.1.0
-Date: 2021-05-08
+Date: 2021-05-21
 Authors@R: c(person("Chau", "Tran", email = "chautran@ucsb.edu", role = c("aut", "cre")),
-             person("Sang-Yun", "Oh", email = "syoh@ucsb.edu", role = c("aut")))
+             person("Sang-Yun", "Oh", role = c("aut")),
+             person("Pedro", "Cisneros-Velarde", role = c("aut")),
+             person("Alexander", "Petersen", role = c("aut")))
 Description: An implementation of Robust Selection algorithm for estimation of the graphical lasso regularization parameter.
-BugReports: https://github.com/cbtran/robsel/issues
+BugReports: https://github.com/dddlab/robust-selection/issues
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Imports: glasso, Rcpp
-Suggests: knitr, rmarkdown
+Suggests: knitr, rmarkdown, huge
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1
 LinkingTo: 

@@ -1,4 +1,3 @@
-// -*- mode: C++; c-indent-level: 4; c-basic-offset: 4; indent-tabs-mode: nil; -*-
 #include <RcppEigen.h>
 #include <Rcpp.h>
 #include <cmath>
@@ -12,13 +11,10 @@ using namespace Eigen;
 // Compute RWP function of Robust Selection
 // [[Rcpp::export]]
 Eigen::VectorXd rwp_rcpp(const Eigen::MatrixXd &X, int B){
-    if (B == 0) {
-        stop("Need more than 0 bootstrap sample");
-    }
     const int n(X.rows());
     const int p(X.cols());
-    if (n == 2) {
-        stop("Sample size must be larger than 2");
+    if (n < 2) {
+        stop("Sample size must be at least 2");
     }
     //Placeholders
     Eigen::VectorXd Lambdas(B);

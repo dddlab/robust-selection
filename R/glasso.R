@@ -2,24 +2,25 @@
 #'
 #' @description Fit  Graphical Lasso with estimate regularization parameter from Robust Selection
 #'
-#' @param X A \code{n}-by-\code{p} data matrix
-#' @param alpha A prespecified confidence level. Default 0.9
+#' @param x A \code{n}-by-\code{p} data matrix
+#' @param alpha Prespecified confidence level. Default 0.9
 #' @param B Number of bootstrap sample. Default 200
 #' @param ... Optional arguments passed on to glasso.
 #'
 #' @return A list with components:
-#' \item{alpha}{Prespecified confidence level}
-#' \item{lambda}{Estimate regularization parameter for Graphical Lasso}
-#' \item{Omega}{Estimated inverse covariance matrix}
-#' \item{Sigma}{Estimated covariance matrix}
+#' \item{alpha}{A list of prespecified confidence level}
+#' \item{lambda}{A list of estimate regularization parameter for Graphical Lasso}
+#' \item{Omega}{A list of estimated inverse covariance matrix}
+#' \item{Sigma}{A list of estimated covariance matrix}
+#' @note Each item in each compenent corresponds to a prespecified level alpha.
 #'
 #' @examples
 #' set.seed(17)
 #' library(robsel)
-#' X <-matrix(rnorm(50*20),ncol=20)
+#' x <-matrix(rnorm(50*20),ncol=20)
 #'
 #' #Use Graphical Lasso with estimate regularization parameter lambda from RobSel
-#' a <- robsel.glasso(X = X, alpha = 0.9, B = 200)
+#' fit <- robsel.glasso(x = x, alpha = 0.9, B = 200)
 #'
 #' @references P Cisneros-Velarde, A Petersen and S-Y Oh (2020). Distributionally Robust Formulation and Model Selection for the Graphical Lasso. Proceedings of the Twenty Third International Conference on Artificial Intelligence and Statistics.
 #' @references Friedman, Jerome, Trevor Hastie, and Robert Tibshirani. 'Sparse inverse covariance estimation with the graphical lasso.' \emph{Biostatistics} 9.3 (2008): 432-441.
@@ -34,13 +35,20 @@
 #' @importFrom stats cov
 #' @export
 #'
-robsel.glasso <- function(X, alpha = 0.9, B = 200, ...) {
+robsel.glasso <- function(x, alpha = 0.9, B = 200, ...) {
+    s = cov(x)
+    
     # Compute estimate regularization parameter from RobSel
-    lambda <- robsel(X, alpha, B)
-    s <- cov(X)
-    # Return the fit of glasso
-    model <- glasso(s=s, rho=lambda, ...)
-    returns = list(alpha = alpha, lambda = lambda,
-                   Omega = model$wi, Sigma = model$w)
+    lambda = robsel(x, alpha, B)
+    
+    # Fit of glasso
+    models = sapply(lambda, glasso, s=s, ...)
+    
+    #Return components
+    returns = list()
+    returns$alpha = alpha
+    returns$lambda = lambda
+    returns$Sigma = models[1,]
+    returns$Omega = models[2,]
     return(returns)
 }

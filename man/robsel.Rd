@@ -4,17 +4,17 @@
 \alias{robsel}
 \title{Robust Selection}
 \usage{
-robsel(X, alpha = 0.9, B = 200)
+robsel(x, alpha = 0.9, B = 200)
 }
 \arguments{
-\item{X}{A \code{n}-by-\code{p} data matrix}
+\item{x}{A \code{n}-by-\code{p} data matrix}
 
-\item{alpha}{A prespecified confidence level. Default 0.9}
+\item{alpha}{Prespecified confidence level. Default 0.9}
 
 \item{B}{Number of bootstrap sample. Default 200}
 }
 \value{
-\code{lambda} A estimation of the regularization parameter for Graphical Lasso
+\code{lambda} Estimation of the regularization parameter for Graphical Lasso. A vector of lambda will be return if more than 1 value of alpha is provided.
 }
 \description{
 Robust Selection algorithm for estimation of the regularization parameter for Graphical Lasso
@@ -22,10 +22,10 @@ Robust Selection algorithm for estimation of the regularization parameter for Gr
 \examples{
 set.seed(17)
 library(robsel)
-X <-matrix(rnorm(50*20),ncol=20)
+x <-matrix(rnorm(50*20),ncol=20)
 
 #Compute estimation of lambda at confidence level alpha
-lambda <- robsel(X = X, alpha = 0.9, B = 200)
+lambda <- robsel(x = x, alpha = 0.9, B = 200)
 
 }
 \references{
