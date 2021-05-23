@@ -3,10 +3,8 @@ Type: Package
 Title: Robust Selection algorithm for Graphical Lasso
 Version: 0.1.0
 Date: 2021-05-21
-Authors@R: c(person("Chau", "Tran", email = "chautran@ucsb.edu", role = c("aut", "cre")),
-             person("Sang-Yun", "Oh", role = c("aut")),
-             person("Pedro", "Cisneros-Velarde", role = c("aut")),
-             person("Alexander", "Petersen", role = c("aut")))
+Author: Chau Tran, Sang-yun Oh, Pedro Cisneros-Velarde, Alexander Petersen
+Maintainer: Chau Tran <chautran@ucsb.edu>
 Description: An implementation of Robust Selection algorithm for estimation of the graphical lasso regularization parameter.
 BugReports: https://github.com/dddlab/robust-selection/issues
 License: GPL (>= 3)
