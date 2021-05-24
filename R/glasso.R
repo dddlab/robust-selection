@@ -50,5 +50,7 @@ robsel.glasso <- function(x, alpha = 0.9, B = 200, ...) {
     returns$lambda = lambda
     returns$Sigma = models[1,]
     returns$Omega = models[2,]
+    names(returns$Sigma) = NULL
+    names(returns$Omega) = NULL
     return(returns)
 }
