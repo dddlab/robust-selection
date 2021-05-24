@@ -42,10 +42,15 @@ This is a basic example which shows you how to solve a common problem:
 library(robsel)
 ## basic example code
 x <- matrix(rnorm(100*5),ncol=5)
-#Estimate lambda for glasso
+```
+### Estimate lambda for glasso
+``` r
 lambda <- robsel(x, alpha=0.9, B=200)
 lambda
 #> [1] 0.1708681
+```
+### Use glasso directly with robsel estimate
+```r
 #Use glasso directly with robsel estimate
 glasso.model <- robsel.glasso(x, alpha=0.9)
 glasso.model
@@ -73,7 +78,9 @@ glasso.model
 #> [3,] 0.000000000 0.0000000 0.81393 0.0000000 0.000000000
 #> [4,] 0.000000000 0.0000000 0.00000 0.7942955 0.000000000
 #> [5,] 0.004552203 0.0000000 0.00000 0.0000000 0.773910976
-#Using robsel with multiple confidence level alpha
+```
+### Using robsel with multiple confidence levels alpha
+```r
 robsel(x, alpha=c(0.1,0.9))
 #> [1] 0.3510959 0.1709872
 robsel.glasso(x, alpha=c(0.1,0.9))
