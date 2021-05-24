@@ -12,7 +12,7 @@
 #' \item{lambda}{A list of estimate regularization parameter for Graphical Lasso}
 #' \item{Omega}{A list of estimated inverse covariance matrix}
 #' \item{Sigma}{A list of estimated covariance matrix}
-#' @note Each item in each compenent corresponds to a prespecified level alpha.
+#' @note Each item in each component corresponds to a prespecified level alpha.
 #'
 #' @examples
 #' set.seed(17)
