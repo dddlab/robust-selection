@@ -1,7 +1,8 @@
 Robust Selection
 ================
 
-[![PyPI version](https://badge.fury.io/py/robust-selection.svg)](https://badge.fury.io/py/robust-selection) 
+[![Badge](https://www.r-pkg.org/badges/version/robsel)](https://cran.r-project.org/web/packages/robsel/index.html)
+[![PyPI version](https://badge.fury.io/py/robust-selection.svg)](https://badge.fury.io/py/robust-selection)
 
 R and Python Package by **C Tran**, P Cisneros-Velarde, A Petersen and S-Y Oh
 
@@ -25,15 +26,11 @@ The basic example of RobSel can be found in this binder
 
 # R
 ## Installation
-To install R package with devtools, run the following command in your R console:
+To install from CRAN
 ```r
-devtools::install_github("dddlab/robust-selection")
+install.packages("robsel")
 ```
-If you also want install the vignettes along with the package, type instead:
-```r
-devtools::install_github("dddlab/robust-selection", build_vignette = TRUE)
- ```
- 
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
